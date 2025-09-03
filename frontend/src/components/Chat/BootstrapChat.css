@@ -1,0 +1,169 @@
+/* Custom Chat Styles that complement Bootstrap */
+
+/* Chat container improvements */
+.chat-messages-container {
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-messages-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  min-height: 0; /* This ensures proper flex behavior */
+}
+
+/* Force scroll container to take available space */
+.chat-messages-scroll .d-flex {
+  min-height: 100%;
+  align-items: flex-end; /* Align messages to bottom */
+}
+
+/* Message container improvements */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100%;
+  gap: 0.5rem;
+}
+
+/* Ensure messages stay at bottom when container is taller than content */
+.messages-container:empty::before {
+  content: "";
+  flex: 1;
+}
+
+/* Message bubble improvements */
+.message-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+  animation: slideInMessage 0.3s ease-out;
+  transition: all 0.2s ease;
+}
+
+/* Remove duplicate message bubble styles */
+
+/* Ensure smooth scrolling behavior */
+.chat-messages-scroll {
+  scroll-behavior: smooth;
+}
+
+.chat-messages-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-thumb {
+  background-color: #dee2e6;
+  border-radius: 4px;
+  border: 1px solid #f8f9fa;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #adb5bd;
+}
+
+/* Smooth scrolling for messages */
+.overflow-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #dee2e6 transparent;
+  scroll-behavior: smooth;
+}
+
+.overflow-auto::-webkit-scrollbar {
+  width: 6px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+  background-color: #dee2e6;
+  border-radius: 3px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #adb5bd;
+}
+
+/* Message bubble animations */
+.message-bubble-enter {
+  animation: slideInMessage 0.3s ease-out;
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Typing indicator animation */
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Custom button hover effects */
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+  transition: all 0.2s ease;
+}
+
+/* Improved form controls */
+.form-control:focus {
+  border-color: #2196f3 !important;
+  box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25) !important;
+}
+
+/* Custom list group items */
+.list-group-item.active {
+  background-color: #e3f2fd !important;
+  border-color: #2196f3 !important;
+  color: #1976d2 !important;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+/* Card hover effects */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .message-bubble {
+    max-width: 85%;
+  }
+
+  .chat-messages-container {
+    height: 100vh;
+  }
+}
