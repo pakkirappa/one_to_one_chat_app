@@ -1,0 +1,219 @@
+/* FileMessage specific styles */
+.file-message-container {
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease-out;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+}
+
+.file-message-container.own-message {
+  background: linear-gradient(135deg, #2979ff, #1565c0);
+  border-bottom-right-radius: 4px;
+}
+
+.file-message-container.other-message {
+  background: white;
+  border-bottom-left-radius: 4px;
+}
+
+.file-message-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.file-message-image {
+  max-width: 300px;
+  max-height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  display: block;
+}
+
+.file-message-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-button {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border: none;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.audio-player-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.audio-player-container:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.audio-player {
+  width: 100%;
+  height: 38px;
+  border-radius: 20px;
+  margin-top: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-player {
+  border-radius: 12px;
+  max-width: 300px;
+  max-height: 250px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  display: block;
+}
+
+.file-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  transition: all 0.3s;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.file-icon {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 12px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.own-message .file-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.file-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+  margin-bottom: 4px;
+}
+
+.own-message .file-name {
+  color: white;
+}
+
+.file-size {
+  color: #6c757d;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.own-message .file-size {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.file-type-badge {
+  font-size: 0.65rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.file-download-btn {
+  background-color: white;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-download-btn:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Message timestamp within file messages */
+.file-timestamp {
+  font-size: 0.7rem;
+  text-align: right;
+  opacity: 0.9;
+  margin-top: 6px;
+  padding: 0 4px;
+}
+
+.own-message .file-timestamp {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.other-message .file-timestamp {
+  color: #6c757d;
+}
+
+/* Status indicators */
+.message-read-status {
+  margin-left: 4px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.own-message .message-read-status.read {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Animation for hover effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.file-message-container:active {
+  animation: pulse 0.5s;
+}

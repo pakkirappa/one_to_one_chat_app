@@ -1,0 +1,55 @@
+name: Quality and Security Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        folder: [backend, frontend]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd ${{ matrix.folder }}
+          npm ci
+      - name: Run ESLint
+        run: |
+          cd ${{ matrix.folder }}
+          npx eslint . || true
+      - name: Run npm audit
+        run: |
+          cd ${{ matrix.folder }}
+          npm audit --audit-level=moderate || true
+      - name: Run tests
+        run: |
+          cd ${{ matrix.folder }}
+          if [ -f package.json ] && grep -q '"test"' ${{ matrix.folder }}/package.json; then npm test || true; else echo "No test script found"; fi
+      - name: Build project (if build script exists)
+        run: |
+          cd ${{ matrix.folder }}
+          if [ -f package.json ] && grep -q '"build"' ${{ matrix.folder }}/package.json; then npm run build || true; else echo "No build script found"; fi
+
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: javascript
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3

@@ -1,0 +1,11 @@
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .chat-messages-scroll {
+    padding: 10px;
+    max-height: calc(100vh - 180px); /* Adjust for mobile */
+  }
+
+  .message-bubble {
+    max-width: 85% !important;
+  }
+}

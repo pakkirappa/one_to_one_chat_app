@@ -1,0 +1,38 @@
+/* Sidebar specific styles */
+
+.typing-dots {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  text-align: left;
+}
+
+.typing-dots::after {
+  content: "...";
+  position: absolute;
+  left: 0;
+  animation: typing-dots 1.5s infinite;
+  width: 20px;
+  text-align: left;
+}
+
+@keyframes typing-dots {
+  0% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,19 @@
+/* Enhanced Video Player Container */
+.video-message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin: 8px 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-message-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
