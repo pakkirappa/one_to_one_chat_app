@@ -39,10 +39,7 @@ one_to_one_chat_app/
 │   │   └── socketHandler.js  # Socket.IO event handling
 │   ├── uploads/              # Local file storage
 │   │   ├── images/
-│   │   ├── videos/
-│   │   ├── audio/
 │   │   ├── documents/
-│   │   └── others/
 │   ├── server.js             # Express server setup
 │   ├── package.json
 │   └── .env
@@ -135,3 +132,4 @@ Files are stored locally in `backend/uploads/` organized by category:
 
 - `images/` - JPG, PNG, GIF, etc.
 - `documents/` - PDF, DOC, XLS, etc.
+
