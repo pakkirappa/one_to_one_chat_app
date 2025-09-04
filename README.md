@@ -134,7 +134,4 @@ one_to_one_chat_app/
 Files are stored locally in `backend/uploads/` organized by category:
 
 - `images/` - JPG, PNG, GIF, etc.
-- `videos/` - MP4, AVI, MOV, etc.
-- `audio/` - MP3, WAV, OGG, etc.
 - `documents/` - PDF, DOC, XLS, etc.
-- `others/` - All other file types
